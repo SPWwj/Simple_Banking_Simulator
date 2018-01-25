@@ -1,0 +1,9 @@
+c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\bin\Debug\MiniProj.exe.config
+c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\bin\Debug\MiniProj.exe
+c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\bin\Debug\MiniProj.pdb
+c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug\MiniProj.csprojResolveAssemblyReference.cache
+c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug\MiniProj.Properties.Resources.resources
+c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug\MiniProj.csproj.GenerateResource.Cache
+c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug\MiniProj.exe
+c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug\MiniProj.pdb
+C:\Users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug\MiniProj.Form1.resources
