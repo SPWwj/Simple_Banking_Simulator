@@ -7,3 +7,12 @@ c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug
 c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug\MiniProj.exe
 c:\users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug\MiniProj.pdb
 C:\Users\wwjwe\documents\visual studio 2017\Projects\MiniProj\MiniProj\obj\Debug\MiniProj.Form1.resources
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\bin\Debug\MiniProj.exe.config
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\bin\Debug\MiniProj.exe
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\bin\Debug\MiniProj.pdb
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.csprojResolveAssemblyReference.cache
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.Form1.resources
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.Properties.Resources.resources
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.csproj.GenerateResource.Cache
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.exe
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.pdb

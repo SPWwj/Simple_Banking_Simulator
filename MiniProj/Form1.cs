@@ -140,7 +140,8 @@ namespace MiniProj
                     enKeypad();
                     groupKeyPad.Enabled = false;
                     ODColor();
-                    labelKeypad.Text = "Welcome! ";
+                    print=string.Format("Welcome! Mr/Mdm {0}", cList[i].cName);
+                    labelKeypad.Text = print;
                 }
             }
             catch { MessageBox.Show("Invalid input"); }
@@ -345,6 +346,11 @@ namespace MiniProj
 
             }
             else MessageBox.Show("Unable to create account");
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Default Customer Normal\n Account Number : 222222 \n Account Name : Jack \n Account Balance : 1999 \n Account Pin : 222222\n\nDefault Customer Special\n Account Number : 333333 \n Account Name : Lack \n Account Balance : 2000 \n Account Pin : 333333\n\nYou can create new customer your our Registry System" );
         }
     }
 }

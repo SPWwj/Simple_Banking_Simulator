@@ -38,6 +38,10 @@
             this.txtAccNo = new System.Windows.Forms.TextBox();
             this.panelLogin = new System.Windows.Forms.Panel();
             this.groupReg = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbAccType = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtRegAccName = new System.Windows.Forms.TextBox();
             this.btnReg = new System.Windows.Forms.Button();
             this.btnRegClear = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,10 +78,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtRegAccName = new System.Windows.Forms.TextBox();
-            this.cbAccType = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.groupReg.SuspendLayout();
@@ -193,6 +193,40 @@
             this.groupReg.TabIndex = 1;
             this.groupReg.TabStop = false;
             this.groupReg.Text = "Registry";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(74, 86);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 20);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Account Name";
+            // 
+            // cbAccType
+            // 
+            this.cbAccType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAccType.FormattingEnabled = true;
+            this.cbAccType.Location = new System.Drawing.Point(208, 78);
+            this.cbAccType.Name = "cbAccType";
+            this.cbAccType.Size = new System.Drawing.Size(121, 28);
+            this.cbAccType.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(74, 120);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 20);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Account Name";
+            // 
+            // txtRegAccName
+            // 
+            this.txtRegAccName.Location = new System.Drawing.Point(208, 114);
+            this.txtRegAccName.Name = "txtRegAccName";
+            this.txtRegAccName.Size = new System.Drawing.Size(100, 26);
+            this.txtRegAccName.TabIndex = 14;
             // 
             // btnReg
             // 
@@ -542,45 +576,12 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(61, 29);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(74, 120);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 20);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Account Name";
-            // 
-            // txtRegAccName
-            // 
-            this.txtRegAccName.Location = new System.Drawing.Point(208, 114);
-            this.txtRegAccName.Name = "txtRegAccName";
-            this.txtRegAccName.Size = new System.Drawing.Size(100, 26);
-            this.txtRegAccName.TabIndex = 14;
-            // 
-            // cbAccType
-            // 
-            this.cbAccType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAccType.FormattingEnabled = true;
-            this.cbAccType.Location = new System.Drawing.Point(208, 78);
-            this.cbAccType.Name = "cbAccType";
-            this.cbAccType.Size = new System.Drawing.Size(121, 28);
-            this.cbAccType.TabIndex = 16;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(74, 86);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 20);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Account Name";
             // 
             // Form1
             // 
