@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MiniProj
 {
@@ -56,9 +57,9 @@ namespace MiniProj
             }
         }
 
-        public void userAcc(int regno,string regname,double regdepo,int regpin  )
+        public void userAcc(int regno,string regname,double regdepo,int regpin,char typein  )
         {
-            if(this.cbAccType.SelectedIndex==0)
+            if(typein=='N')
             cList[totalMember] = new Customer(regno, regname, regdepo, regpin);
             else cList[totalMember] = new SpecialCustomer(regno, regname, regdepo, regpin);
         }
@@ -80,10 +81,43 @@ namespace MiniProj
             else { return false; }
         }
 
+        public void readfile()
+        {
+            try
+            {   // Open the text file using a stream reader.
+                using (StreamReader sr = new StreamReader("Acc.txt"))
+                {
+                    string fLine = "";
+                    string[] accItems = new string[5];
+                    // Read the stream to a string, and write the string to the console.
+                    do
+                    {
+                        fLine = sr.ReadLine();
+                        accItems = fLine.Split(' ');
+
+                        for(int i=0; i < 5; i++)
+                        {
+                            Console.WriteLine("{0}", accItems[i]);
+                        }
+                        userAcc(Convert.ToInt32(accItems[1]), accItems[3],Convert.ToDouble(accItems[4]),Convert.ToInt32(accItems[2]),Convert.ToChar(accItems[0]));
+                        updateTotalCustomer();
+                    } while (!sr.EndOfStream);
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
         int i = 0;
-        int cListIndex = 0;//For i/o
+
         public Form1() 
         {
+            
             InitializeComponent();
             cbAccType.Items.Add("Normal");
             cbAccType.Items.Add("Special");
@@ -93,6 +127,9 @@ namespace MiniProj
             cList[0] = new Customer(222222, "Jack", 1999,222222);
             cList[1] = new SpecialCustomer(333333, "Lack", 2000,333333);
             updateTotalCustomer();
+            readfile();
+            foreach (var h in cList) { if (h != null) Console.WriteLine("{0} {1} {2} {3}", h.cName, h.cAccount, h.cPin, h.cBalance); }
+
 
         }
         public void ODColor()
@@ -330,19 +367,20 @@ namespace MiniProj
             int regNo, regPin;
             double regDepo;
             string regName;
-
-
-            Console.WriteLine(validAcc());
+            char type ='N';
             if (totalMember < 10 && validAcc())
             {
                 regNo = Convert.ToInt32(txtRegAccName.Text);
                 regPin = Convert.ToInt32(txtRegPin.Text);
                 regDepo = Convert.ToDouble(txtRegAccDeposit.Text);
-                regName = txtAccNo.Text;
-                userAcc(regNo,regName,regDepo,regPin);
+                regName = txtRegAccName.Text;
+                if (this.cbAccType.SelectedIndex == 0) type = 'N';
+                else type = 'S';
+
+                userAcc(regNo,regName,regDepo,regPin,type);
                 updateTotalCustomer();
                 MessageBox.Show("Your Account have been Successfully created !");
-                foreach (var h in cList) Console.WriteLine(h);
+                foreach (var h in cList) { if (h != null) Console.WriteLine("{0} {1} {2} {3}", h.cName,h.cAccount,h.cPin,h.cBalance); }
 
             }
             else MessageBox.Show("Unable to create account");
