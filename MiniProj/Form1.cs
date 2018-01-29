@@ -199,7 +199,14 @@ namespace MiniProj
                      j++;
                      Console.WriteLine(j);
                  }
-                if (j == totalMember) { MessageBox.Show("Incorrent Password or Username!"); }
+                
+                if (txtAccNo.Text== "Admin" && txtAccPin.Text == "password")
+                {
+                    Form2 admin = new Form2();
+                    admin.Show(this);
+                    this.Hide();
+                }
+                else if (j == totalMember) { MessageBox.Show("Incorrent Password or Username!"); }
                 else
                 {
                     disLogin();
@@ -273,7 +280,6 @@ namespace MiniProj
      
             if (title == "Withdraw")
             {
-                //if (inputValue < cList[i].cBalance || (overdraft == true && inputValue - cList[i].cBalance < 2000))
                 if (inputValue <= (cList[i].cBalance+2000) && cList[i].WithdrawBal(inputValue))
                 {
                     groupKeyPad.Enabled = false;

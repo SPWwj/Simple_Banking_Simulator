@@ -16,3 +16,4 @@ C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debu
 C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.csproj.GenerateResource.Cache
 C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.exe
 C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.pdb
+C:\Users\wwjwe\OneDrive\文档\GitHub\Simple_Banking_Simulator\MiniProj\obj\Debug\MiniProj.Form2.resources
