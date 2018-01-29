@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,6 +50,13 @@
             this.txtRegPin = new System.Windows.Forms.TextBox();
             this.txtRegAccNo = new System.Windows.Forms.TextBox();
             this.panelKeypad = new System.Windows.Forms.Panel();
+            this.panelTranf = new System.Windows.Forms.Panel();
+            this.txtTranfAmount = new System.Windows.Forms.TextBox();
+            this.txtTranfNo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnPTConfirm = new System.Windows.Forms.Button();
+            this.btnPTClose = new System.Windows.Forms.Button();
             this.groupKeyPad = new System.Windows.Forms.GroupBox();
             this.btnOverdraft = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
@@ -70,6 +76,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.labelKeypad = new System.Windows.Forms.Label();
             this.groupCustomerNavi = new System.Windows.Forms.GroupBox();
+            this.btnTranfer = new System.Windows.Forms.Button();
             this.btnInterest = new System.Windows.Forms.Button();
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnBalance = new System.Windows.Forms.Button();
@@ -82,6 +89,7 @@
             this.panelLogin.SuspendLayout();
             this.groupReg.SuspendLayout();
             this.panelKeypad.SuspendLayout();
+            this.panelTranf.SuspendLayout();
             this.groupKeyPad.SuspendLayout();
             this.groupCustomerNavi.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -90,7 +98,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.label3);
@@ -102,18 +109,9 @@
             this.panel1.Size = new System.Drawing.Size(374, 358);
             this.panel1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(127, 255);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 39);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Registry";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(244, 255);
+            this.btnExit.Location = new System.Drawing.Point(238, 255);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 39);
             this.btnExit.TabIndex = 7;
@@ -123,7 +121,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(6, 255);
+            this.btnLogin.Location = new System.Drawing.Point(77, 255);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 39);
             this.btnLogin.TabIndex = 6;
@@ -240,7 +238,7 @@
             // 
             // btnRegClear
             // 
-            this.btnRegClear.Location = new System.Drawing.Point(208, 255);
+            this.btnRegClear.Location = new System.Drawing.Point(229, 255);
             this.btnRegClear.Name = "btnRegClear";
             this.btnRegClear.Size = new System.Drawing.Size(100, 39);
             this.btnRegClear.TabIndex = 12;
@@ -298,6 +296,7 @@
             // 
             // panelKeypad
             // 
+            this.panelKeypad.Controls.Add(this.panelTranf);
             this.panelKeypad.Controls.Add(this.groupKeyPad);
             this.panelKeypad.Controls.Add(this.labelKeypad);
             this.panelKeypad.Controls.Add(this.groupCustomerNavi);
@@ -306,6 +305,72 @@
             this.panelKeypad.Name = "panelKeypad";
             this.panelKeypad.Size = new System.Drawing.Size(848, 421);
             this.panelKeypad.TabIndex = 2;
+            // 
+            // panelTranf
+            // 
+            this.panelTranf.Controls.Add(this.txtTranfAmount);
+            this.panelTranf.Controls.Add(this.txtTranfNo);
+            this.panelTranf.Controls.Add(this.label8);
+            this.panelTranf.Controls.Add(this.label9);
+            this.panelTranf.Controls.Add(this.btnPTConfirm);
+            this.panelTranf.Controls.Add(this.btnPTClose);
+            this.panelTranf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTranf.Location = new System.Drawing.Point(0, 0);
+            this.panelTranf.Name = "panelTranf";
+            this.panelTranf.Size = new System.Drawing.Size(848, 421);
+            this.panelTranf.TabIndex = 22;
+            // 
+            // txtTranfAmount
+            // 
+            this.txtTranfAmount.Location = new System.Drawing.Point(398, 182);
+            this.txtTranfAmount.Name = "txtTranfAmount";
+            this.txtTranfAmount.Size = new System.Drawing.Size(100, 26);
+            this.txtTranfAmount.TabIndex = 11;
+            // 
+            // txtTranfNo
+            // 
+            this.txtTranfNo.Location = new System.Drawing.Point(398, 118);
+            this.txtTranfNo.Name = "txtTranfNo";
+            this.txtTranfNo.Size = new System.Drawing.Size(100, 26);
+            this.txtTranfNo.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(281, 182);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 20);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Amount";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(229, 125);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(128, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Account Number";
+            // 
+            // btnPTConfirm
+            // 
+            this.btnPTConfirm.Location = new System.Drawing.Point(233, 257);
+            this.btnPTConfirm.Name = "btnPTConfirm";
+            this.btnPTConfirm.Size = new System.Drawing.Size(113, 45);
+            this.btnPTConfirm.TabIndex = 7;
+            this.btnPTConfirm.Text = "Confirm";
+            this.btnPTConfirm.UseVisualStyleBackColor = true;
+            this.btnPTConfirm.Click += new System.EventHandler(this.btnPTConfirm_Click);
+            // 
+            // btnPTClose
+            // 
+            this.btnPTClose.Location = new System.Drawing.Point(497, 257);
+            this.btnPTClose.Name = "btnPTClose";
+            this.btnPTClose.Size = new System.Drawing.Size(122, 45);
+            this.btnPTClose.TabIndex = 6;
+            this.btnPTClose.Text = "Close";
+            this.btnPTClose.UseVisualStyleBackColor = true;
+            this.btnPTClose.Click += new System.EventHandler(this.btnPTClose_Click);
             // 
             // groupKeyPad
             // 
@@ -498,21 +563,32 @@
             // 
             // groupCustomerNavi
             // 
+            this.groupCustomerNavi.Controls.Add(this.btnTranfer);
             this.groupCustomerNavi.Controls.Add(this.btnInterest);
             this.groupCustomerNavi.Controls.Add(this.btnDeposit);
             this.groupCustomerNavi.Controls.Add(this.btnBalance);
             this.groupCustomerNavi.Controls.Add(this.btnWithdraw);
             this.groupCustomerNavi.Controls.Add(this.btnBack);
-            this.groupCustomerNavi.Location = new System.Drawing.Point(577, 60);
+            this.groupCustomerNavi.Location = new System.Drawing.Point(577, 45);
             this.groupCustomerNavi.Name = "groupCustomerNavi";
-            this.groupCustomerNavi.Size = new System.Drawing.Size(164, 349);
+            this.groupCustomerNavi.Size = new System.Drawing.Size(164, 364);
             this.groupCustomerNavi.TabIndex = 21;
             this.groupCustomerNavi.TabStop = false;
             this.groupCustomerNavi.Text = "Choose an Action";
             // 
+            // btnTranfer
+            // 
+            this.btnTranfer.Location = new System.Drawing.Point(16, 25);
+            this.btnTranfer.Name = "btnTranfer";
+            this.btnTranfer.Size = new System.Drawing.Size(131, 47);
+            this.btnTranfer.TabIndex = 21;
+            this.btnTranfer.Text = "Tranfer";
+            this.btnTranfer.UseVisualStyleBackColor = true;
+            this.btnTranfer.Click += new System.EventHandler(this.btnTranfer_Click);
+            // 
             // btnInterest
             // 
-            this.btnInterest.Location = new System.Drawing.Point(17, 108);
+            this.btnInterest.Location = new System.Drawing.Point(16, 135);
             this.btnInterest.Name = "btnInterest";
             this.btnInterest.Size = new System.Drawing.Size(131, 51);
             this.btnInterest.TabIndex = 20;
@@ -522,7 +598,7 @@
             // 
             // btnDeposit
             // 
-            this.btnDeposit.Location = new System.Drawing.Point(17, 222);
+            this.btnDeposit.Location = new System.Drawing.Point(16, 249);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(131, 51);
             this.btnDeposit.TabIndex = 19;
@@ -532,7 +608,7 @@
             // 
             // btnBalance
             // 
-            this.btnBalance.Location = new System.Drawing.Point(17, 51);
+            this.btnBalance.Location = new System.Drawing.Point(16, 78);
             this.btnBalance.Name = "btnBalance";
             this.btnBalance.Size = new System.Drawing.Size(131, 51);
             this.btnBalance.TabIndex = 17;
@@ -542,7 +618,7 @@
             // 
             // btnWithdraw
             // 
-            this.btnWithdraw.Location = new System.Drawing.Point(17, 165);
+            this.btnWithdraw.Location = new System.Drawing.Point(16, 192);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(131, 51);
             this.btnWithdraw.TabIndex = 18;
@@ -552,7 +628,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(17, 279);
+            this.btnBack.Location = new System.Drawing.Point(16, 306);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(131, 51);
             this.btnBack.TabIndex = 16;
@@ -592,6 +668,7 @@
             this.Controls.Add(this.panelLogin);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -600,6 +677,8 @@
             this.groupReg.ResumeLayout(false);
             this.groupReg.PerformLayout();
             this.panelKeypad.ResumeLayout(false);
+            this.panelTranf.ResumeLayout(false);
+            this.panelTranf.PerformLayout();
             this.groupKeyPad.ResumeLayout(false);
             this.groupCustomerNavi.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -646,7 +725,6 @@
         private System.Windows.Forms.Button btnBalance;
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnInterest;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.GroupBox groupReg;
         private System.Windows.Forms.Button btnReg;
@@ -661,6 +739,14 @@
         private System.Windows.Forms.TextBox txtRegAccName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbAccType;
+        private System.Windows.Forms.Button btnTranfer;
+        private System.Windows.Forms.Panel panelTranf;
+        private System.Windows.Forms.TextBox txtTranfAmount;
+        private System.Windows.Forms.TextBox txtTranfNo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnPTConfirm;
+        private System.Windows.Forms.Button btnPTClose;
     }
 }
 

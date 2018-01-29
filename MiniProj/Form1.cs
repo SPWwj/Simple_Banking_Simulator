@@ -13,6 +13,16 @@ namespace MiniProj
 {
     public partial class Form1 : Form 
     {
+        private void enTranf()
+        {
+            panelTranf.Visible = true;
+            panelTranf.Enabled = true;
+        }
+        private void disTranf()
+        {
+            panelTranf.Visible = false;
+            panelTranf.Enabled = false;
+        }
 
         private void enKeypad()
         {
@@ -44,6 +54,7 @@ namespace MiniProj
         private string tempAcc;
         private string tempPin;
         Customer[] cList = new Customer[10];
+  
 
         int totalMember = 0;
 
@@ -130,6 +141,7 @@ namespace MiniProj
         }
 
         int i = 0;
+       
 
         public Form1() 
         {
@@ -140,14 +152,13 @@ namespace MiniProj
             cbAccType.SelectedIndex = 0;
             enLogin();
             disKeypad();
+            disTranf();
             cList[0] = new Customer("222222", "Jack", 1999,"222222");
             cList[1] = new SpecialCustomer("333333", "Lack", 2000,"333333");
             updateTotalCustomer();
             readfile();
             foreach (var h in cList) { if (h != null) Console.WriteLine("{0} {1} {2} {3}", h.cName, h.cAccount, h.cPin, h.cBalance); }
-            //string text = File.ReadAllText("Acc.txt");
-            //text = text.Replace("some text", "new value");
-            //File.WriteAllText("Acc.txt", text);
+    
 
         }
         public void ODColor()
@@ -409,6 +420,55 @@ namespace MiniProj
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Default Customer Normal\n Account Number : 222222 \n Account Name : Jack \n Account Balance : 1999 \n Account Pin : 222222\n\nDefault Customer Special\n Account Number : 333333 \n Account Name : Lack \n Account Balance : 2000 \n Account Pin : 333333\n\nYou can create new customer your our Registry System" );
+        }
+
+        private void btnTranfer_Click(object sender, EventArgs e)
+        {
+            enTranf();
+            //disKeypad();
+          
+
+        }
+
+        private void btnPTClose_Click(object sender, EventArgs e)
+        {
+            //enKeypad();
+            disTranf();
+        }
+
+        private void btnPTConfirm_Click(object sender, EventArgs e)
+        {
+            string tranfAcc;
+            try
+            {
+                int tranfIndex=0;
+                int ti=0;
+                tranfAcc = txtTranfNo.Text;
+                while (ti < totalMember)
+                {
+                    if (cList[ti].cAccount == txtTranfNo.Text)
+                    {
+                        tranfIndex = ti;
+                        break;
+                    }
+                    ti++;
+                    Console.WriteLine(ti);
+                }
+                if (ti == totalMember) { MessageBox.Show("Incorrent Account"); }
+                else
+                {
+                    if (cList[i].WithdrawBal(Convert.ToDouble(txtTranfAmount.Text)))
+                    {
+                        cList[tranfIndex].DepositBal(Convert.ToDouble(txtTranfAmount.Text));
+                        MessageBox.Show("Transfer Succeed");
+                        write2File();
+                    }
+                    else MessageBox.Show("Transfer Fail");
+                
+
+                }
+            }
+            catch { MessageBox.Show("Invalid input"); }
         }
     }
 }
