@@ -8,12 +8,12 @@ namespace MiniProj
 {
     class Customer
     {
-        protected int custAccount;
+        protected string custAccount;
         protected string custName;
         protected double amtBalance;
-        protected int cusPin;
+        protected string cusPin;
 
-        public int cAccount
+        public string cAccount
         {
             get { return custAccount; }
         }
@@ -25,16 +25,16 @@ namespace MiniProj
         {
             get { return amtBalance; }
         }
-        public double cPin
+        public string cPin
         {
             get { return cusPin; }
         }
         public Customer()
         {
             //testing init
-            custAccount = 666666; custName = "Peter"; amtBalance =500; cusPin = 666666;
+            custAccount = "666666"; custName = "Peter"; amtBalance =500; cusPin = "666666";
         }
-        public Customer(int acc, string cname, double cbalance,int cpin) 
+        public Customer(string acc, string cname, double cbalance,string cpin) 
         {
             custAccount = acc; custName = cname; amtBalance = cbalance; cusPin = cpin;
         }
@@ -91,7 +91,7 @@ namespace MiniProj
     {
         private double overdraft=0;
         private double tempValue = 0;
-        public SpecialCustomer(int acc, string cname, double cbalance, int cpin) : base(acc, cname, cbalance,cpin)
+        public SpecialCustomer(string acc, string cname, double cbalance, string cpin) : base(acc, cname, cbalance,cpin)
         {
             overdraft = 2000;   
         }

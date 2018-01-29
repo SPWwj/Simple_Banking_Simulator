@@ -588,8 +588,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(848, 421);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelKeypad);
+            this.Controls.Add(this.panelLogin);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";

@@ -41,8 +41,8 @@ namespace MiniProj
         private string tempString="";
         private int inputValue = 0;
         private string countString = "";
-        private int tempAcc;
-        private int tempPin;
+        private string tempAcc;
+        private string tempPin;
         Customer[] cList = new Customer[10];
 
         int totalMember = 0;
@@ -57,7 +57,7 @@ namespace MiniProj
             }
         }
 
-        public void userAcc(int regno,string regname,double regdepo,int regpin,char typein  )
+        public void userAcc(string regno,string regname,double regdepo,string regpin,char typein  )
         {
             if(typein=='N')
             cList[totalMember] = new Customer(regno, regname, regdepo, regpin);
@@ -68,7 +68,7 @@ namespace MiniProj
         {
             if (cList[i].isAccValid(txtRegAccNo.Text))
             {
-                int cAcc = Convert.ToInt32(txtRegAccNo.Text);
+                string cAcc = txtRegAccNo.Text;
                 int k = 0;
                 while (k < totalMember)
                 {
@@ -94,12 +94,7 @@ namespace MiniProj
                     {
                         fLine = sr.ReadLine();
                         accItems = fLine.Split(' ');
-
-                        for(int i=0; i < 5; i++)
-                        {
-                            Console.WriteLine("{0}", accItems[i]);
-                        }
-                        userAcc(Convert.ToInt32(accItems[1]), accItems[3],Convert.ToDouble(accItems[4]),Convert.ToInt32(accItems[2]),Convert.ToChar(accItems[0]));
+                        userAcc(accItems[1], accItems[3],Convert.ToDouble(accItems[4]),accItems[2],Convert.ToChar(accItems[0]));
                         updateTotalCustomer();
                     } while (!sr.EndOfStream);
                 }
@@ -113,6 +108,27 @@ namespace MiniProj
 
         }
 
+        public void write2File()
+        {
+            string writeString="";
+            string wLineString="";
+            char wtype;
+            for (int n = 2; n < 10; n++)
+            {
+                if (cList[n] != null)
+                {
+                    Console.WriteLine(cList[n]);
+                    if (cList[n].printOD() != null) wtype = 'S';
+                    else wtype = 'N';
+                    wLineString = string.Format("{0} {1} {2} {3} {4}\n", wtype, cList[n].cAccount, cList[n].cPin, cList[n].cName, cList[n].cBalance);
+                    writeString += wLineString;
+                }
+               
+            }
+            Console.WriteLine(writeString);
+            File.WriteAllText("Acc.txt", writeString);
+        }
+
         int i = 0;
 
         public Form1() 
@@ -124,12 +140,14 @@ namespace MiniProj
             cbAccType.SelectedIndex = 0;
             enLogin();
             disKeypad();
-            cList[0] = new Customer(222222, "Jack", 1999,222222);
-            cList[1] = new SpecialCustomer(333333, "Lack", 2000,333333);
+            cList[0] = new Customer("222222", "Jack", 1999,"222222");
+            cList[1] = new SpecialCustomer("333333", "Lack", 2000,"333333");
             updateTotalCustomer();
             readfile();
             foreach (var h in cList) { if (h != null) Console.WriteLine("{0} {1} {2} {3}", h.cName, h.cAccount, h.cPin, h.cBalance); }
-
+            //string text = File.ReadAllText("Acc.txt");
+            //text = text.Replace("some text", "new value");
+            //File.WriteAllText("Acc.txt", text);
 
         }
         public void ODColor()
@@ -158,8 +176,8 @@ namespace MiniProj
             try
             {
                 int j=0;
-                tempAcc = Convert.ToInt32(txtAccNo.Text);
-                tempPin = Convert.ToInt32(txtAccPin.Text);
+                tempAcc = txtAccNo.Text;
+                tempPin = txtAccPin.Text;
                 while (j<totalMember)
                  {
                      if (cList[j].cPin == tempPin && cList[j].cAccount == tempAcc)
@@ -266,6 +284,7 @@ namespace MiniProj
                 print = string.Format("{0}\nDeposit Succee! Your New Balance is :${1:f2}\nPress Any Operation Key\n{2}\n", tempString, cList[i].cBalance,cList[i].printOD());
                 labelKeypad.Text = (print);
             }
+            write2File();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -364,14 +383,14 @@ namespace MiniProj
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            int regNo, regPin;
+            string regNo, regPin;
             double regDepo;
             string regName;
             char type ='N';
             if (totalMember < 10 && validAcc())
             {
-                regNo = Convert.ToInt32(txtRegAccName.Text);
-                regPin = Convert.ToInt32(txtRegPin.Text);
+                regNo = txtRegAccNo.Text;
+                regPin = txtRegPin.Text;
                 regDepo = Convert.ToDouble(txtRegAccDeposit.Text);
                 regName = txtRegAccName.Text;
                 if (this.cbAccType.SelectedIndex == 0) type = 'N';
@@ -380,6 +399,7 @@ namespace MiniProj
                 userAcc(regNo,regName,regDepo,regPin,type);
                 updateTotalCustomer();
                 MessageBox.Show("Your Account have been Successfully created !");
+                write2File();
                 foreach (var h in cList) { if (h != null) Console.WriteLine("{0} {1} {2} {3}", h.cName,h.cAccount,h.cPin,h.cBalance); }
 
             }
