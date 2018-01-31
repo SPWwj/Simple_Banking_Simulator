@@ -50,7 +50,7 @@
             this.btnF2Close.Name = "btnF2Close";
             this.btnF2Close.Size = new System.Drawing.Size(122, 45);
             this.btnF2Close.TabIndex = 8;
-            this.btnF2Close.Text = "Close";
+            this.btnF2Close.Text = "Logout";
             this.btnF2Close.UseVisualStyleBackColor = true;
             this.btnF2Close.Click += new System.EventHandler(this.btnF2Close_Click);
             // 

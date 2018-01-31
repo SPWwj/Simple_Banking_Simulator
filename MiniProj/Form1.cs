@@ -253,7 +253,7 @@ namespace MiniProj
         private void btnDeposit_Click(object sender, EventArgs e)
         {
             title = "Deposit";
-            print = string.Format("{0}\nEnter the amount you want to deposite : ", title);
+            print = string.Format("{0}\nEnter the amount you want to deposit : ", title);
             labelKeypad.Text = (print);
             countString = print;
             groupKeyPad.Enabled = true;

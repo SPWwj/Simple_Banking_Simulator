@@ -16,27 +16,31 @@ namespace MiniProj
         public string cAccount
         {
             get { return custAccount; }
+            set { custAccount = value; }
         }
         public string cName
         {
             get { return custName; }
+            set { custName = value ; }
         }
         public double cBalance
         {
             get { return amtBalance; }
+            set { amtBalance = value; }
         }
         public string cPin
         {
             get { return cusPin; }
+            set { cusPin = value; }
         }
         public Customer()
         {
             //testing init
-            custAccount = "666666"; custName = "Peter"; amtBalance =500; cusPin = "666666";
+            cAccount = "666666"; cName = "Peter"; cBalance =500; cPin = "666666";
         }
         public Customer(string acc, string cname, double cbalance,string cpin) 
         {
-            custAccount = acc; custName = cname; amtBalance = cbalance; cusPin = cpin;
+            cAccount = acc; cName = cname; cBalance = cbalance; cPin = cpin;
         }
 
         public bool isAccValid (string accCheck)
@@ -55,28 +59,28 @@ namespace MiniProj
 
         public virtual bool WithdrawBal(double withdraw)
         {
-            if (withdraw <= amtBalance)
+            if (withdraw <= cBalance)
             {
                
-                amtBalance -= withdraw;
+                cBalance -= withdraw;
                 return true;
             }
             else return false; ;
         }
         public virtual void DepositBal(double deposit)
         {
-            amtBalance += deposit;
+            cBalance += deposit;
         }
         public double CalculateInterest()
         {
             double monthlyInterest;
-            if (amtBalance < 3000)
+            if (cBalance < 3000)
             {
-                monthlyInterest = amtBalance * 0.025 / 12;
+                monthlyInterest = cBalance * 0.025 / 12;
             }
             else
             {
-                monthlyInterest = 3000 * 0.025 / 12 + (amtBalance - 3000) * 0.035 / 12;
+                monthlyInterest = 3000 * 0.025 / 12 + (cBalance - 3000) * 0.035 / 12;
             }
             return monthlyInterest;
         }
@@ -98,13 +102,13 @@ namespace MiniProj
 
         public override bool WithdrawBal(double withdraw)
         {
-            tempValue = amtBalance - withdraw;
+            tempValue = cBalance - withdraw;
             if (tempValue < 0)
             {
-                amtBalance = 0;
+                cBalance = 0;
                 overdraft += tempValue;
             }
-            else { amtBalance -= withdraw; Console.WriteLine("Else{0}", amtBalance); }
+            else { cBalance -= withdraw; Console.WriteLine("Else{0}", cBalance); }
             return true;
         }
         public override void DepositBal(double deposit)
@@ -115,12 +119,12 @@ namespace MiniProj
                 if (tempValue > 2000)
                 {
                     overdraft = 2000;
-                    amtBalance += (tempValue - overdraft);
+                    cBalance += (tempValue - overdraft);
                 }
                 else overdraft += deposit;
                     
             }
-            else amtBalance += deposit;
+            else cBalance += deposit;
         }
         public override string printOD()
         {

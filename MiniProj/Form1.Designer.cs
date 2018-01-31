@@ -50,13 +50,6 @@
             this.txtRegPin = new System.Windows.Forms.TextBox();
             this.txtRegAccNo = new System.Windows.Forms.TextBox();
             this.panelKeypad = new System.Windows.Forms.Panel();
-            this.panelTranf = new System.Windows.Forms.Panel();
-            this.txtTranfAmount = new System.Windows.Forms.TextBox();
-            this.txtTranfNo = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnPTConfirm = new System.Windows.Forms.Button();
-            this.btnPTClose = new System.Windows.Forms.Button();
             this.groupKeyPad = new System.Windows.Forms.GroupBox();
             this.btnOverdraft = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
@@ -82,6 +75,13 @@
             this.btnBalance = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.panelTranf = new System.Windows.Forms.Panel();
+            this.txtTranfAmount = new System.Windows.Forms.TextBox();
+            this.txtTranfNo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnPTConfirm = new System.Windows.Forms.Button();
+            this.btnPTClose = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
@@ -89,9 +89,9 @@
             this.panelLogin.SuspendLayout();
             this.groupReg.SuspendLayout();
             this.panelKeypad.SuspendLayout();
-            this.panelTranf.SuspendLayout();
             this.groupKeyPad.SuspendLayout();
             this.groupCustomerNavi.SuspendLayout();
+            this.panelTranf.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +151,7 @@
             // 
             this.txtAccPin.Location = new System.Drawing.Point(155, 185);
             this.txtAccPin.Name = "txtAccPin";
+            this.txtAccPin.PasswordChar = '*';
             this.txtAccPin.Size = new System.Drawing.Size(100, 26);
             this.txtAccPin.TabIndex = 2;
             // 
@@ -197,9 +198,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(74, 86);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 20);
+            this.label7.Size = new System.Drawing.Size(106, 20);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Account Name";
+            this.label7.Text = "Account Type";
             // 
             // cbAccType
             // 
@@ -305,72 +306,6 @@
             this.panelKeypad.Name = "panelKeypad";
             this.panelKeypad.Size = new System.Drawing.Size(848, 421);
             this.panelKeypad.TabIndex = 2;
-            // 
-            // panelTranf
-            // 
-            this.panelTranf.Controls.Add(this.txtTranfAmount);
-            this.panelTranf.Controls.Add(this.txtTranfNo);
-            this.panelTranf.Controls.Add(this.label8);
-            this.panelTranf.Controls.Add(this.label9);
-            this.panelTranf.Controls.Add(this.btnPTConfirm);
-            this.panelTranf.Controls.Add(this.btnPTClose);
-            this.panelTranf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTranf.Location = new System.Drawing.Point(0, 0);
-            this.panelTranf.Name = "panelTranf";
-            this.panelTranf.Size = new System.Drawing.Size(848, 421);
-            this.panelTranf.TabIndex = 22;
-            // 
-            // txtTranfAmount
-            // 
-            this.txtTranfAmount.Location = new System.Drawing.Point(398, 182);
-            this.txtTranfAmount.Name = "txtTranfAmount";
-            this.txtTranfAmount.Size = new System.Drawing.Size(100, 26);
-            this.txtTranfAmount.TabIndex = 11;
-            // 
-            // txtTranfNo
-            // 
-            this.txtTranfNo.Location = new System.Drawing.Point(398, 118);
-            this.txtTranfNo.Name = "txtTranfNo";
-            this.txtTranfNo.Size = new System.Drawing.Size(100, 26);
-            this.txtTranfNo.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(281, 182);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 20);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Amount";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(229, 125);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Account Number";
-            // 
-            // btnPTConfirm
-            // 
-            this.btnPTConfirm.Location = new System.Drawing.Point(233, 257);
-            this.btnPTConfirm.Name = "btnPTConfirm";
-            this.btnPTConfirm.Size = new System.Drawing.Size(113, 45);
-            this.btnPTConfirm.TabIndex = 7;
-            this.btnPTConfirm.Text = "Confirm";
-            this.btnPTConfirm.UseVisualStyleBackColor = true;
-            this.btnPTConfirm.Click += new System.EventHandler(this.btnPTConfirm_Click);
-            // 
-            // btnPTClose
-            // 
-            this.btnPTClose.Location = new System.Drawing.Point(497, 257);
-            this.btnPTClose.Name = "btnPTClose";
-            this.btnPTClose.Size = new System.Drawing.Size(122, 45);
-            this.btnPTClose.TabIndex = 6;
-            this.btnPTClose.Text = "Close";
-            this.btnPTClose.UseVisualStyleBackColor = true;
-            this.btnPTClose.Click += new System.EventHandler(this.btnPTClose_Click);
             // 
             // groupKeyPad
             // 
@@ -632,9 +567,75 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(131, 51);
             this.btnBack.TabIndex = 16;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "Logout";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // panelTranf
+            // 
+            this.panelTranf.Controls.Add(this.txtTranfAmount);
+            this.panelTranf.Controls.Add(this.txtTranfNo);
+            this.panelTranf.Controls.Add(this.label8);
+            this.panelTranf.Controls.Add(this.label9);
+            this.panelTranf.Controls.Add(this.btnPTConfirm);
+            this.panelTranf.Controls.Add(this.btnPTClose);
+            this.panelTranf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTranf.Location = new System.Drawing.Point(0, 0);
+            this.panelTranf.Name = "panelTranf";
+            this.panelTranf.Size = new System.Drawing.Size(848, 421);
+            this.panelTranf.TabIndex = 22;
+            // 
+            // txtTranfAmount
+            // 
+            this.txtTranfAmount.Location = new System.Drawing.Point(398, 182);
+            this.txtTranfAmount.Name = "txtTranfAmount";
+            this.txtTranfAmount.Size = new System.Drawing.Size(100, 26);
+            this.txtTranfAmount.TabIndex = 11;
+            // 
+            // txtTranfNo
+            // 
+            this.txtTranfNo.Location = new System.Drawing.Point(398, 118);
+            this.txtTranfNo.Name = "txtTranfNo";
+            this.txtTranfNo.Size = new System.Drawing.Size(100, 26);
+            this.txtTranfNo.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(281, 182);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 20);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Amount";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(229, 125);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(128, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Account Number";
+            // 
+            // btnPTConfirm
+            // 
+            this.btnPTConfirm.Location = new System.Drawing.Point(233, 257);
+            this.btnPTConfirm.Name = "btnPTConfirm";
+            this.btnPTConfirm.Size = new System.Drawing.Size(113, 45);
+            this.btnPTConfirm.TabIndex = 7;
+            this.btnPTConfirm.Text = "Confirm";
+            this.btnPTConfirm.UseVisualStyleBackColor = true;
+            this.btnPTConfirm.Click += new System.EventHandler(this.btnPTConfirm_Click);
+            // 
+            // btnPTClose
+            // 
+            this.btnPTClose.Location = new System.Drawing.Point(497, 257);
+            this.btnPTClose.Name = "btnPTClose";
+            this.btnPTClose.Size = new System.Drawing.Size(122, 45);
+            this.btnPTClose.TabIndex = 6;
+            this.btnPTClose.Text = "Back";
+            this.btnPTClose.UseVisualStyleBackColor = true;
+            this.btnPTClose.Click += new System.EventHandler(this.btnPTClose_Click);
             // 
             // menuStrip1
             // 
@@ -677,10 +678,10 @@
             this.groupReg.ResumeLayout(false);
             this.groupReg.PerformLayout();
             this.panelKeypad.ResumeLayout(false);
-            this.panelTranf.ResumeLayout(false);
-            this.panelTranf.PerformLayout();
             this.groupKeyPad.ResumeLayout(false);
             this.groupCustomerNavi.ResumeLayout(false);
+            this.panelTranf.ResumeLayout(false);
+            this.panelTranf.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
