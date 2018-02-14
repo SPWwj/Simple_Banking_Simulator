@@ -49,7 +49,7 @@ namespace MiniProj
         private string title = "";
         private string print = "";
         private string tempString="";
-        private int inputValue = 0;
+        private int inputValue=0;
         private string countString = "";
         private string tempAcc;
         private string tempPin;
